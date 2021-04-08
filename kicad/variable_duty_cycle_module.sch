@@ -1,0 +1,362 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Variable duty cycle module"
+Date "2021-03-01"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "Author: Me"
+$EndDescr
+$Comp
+L power:GND #PWR02
+U 1 1 6036DB89
+P 5050 3600
+F 0 "#PWR02" H 5050 3350 50  0001 C CNN
+F 1 "GND" V 5055 3472 50  0000 R CNN
+F 2 "" H 5050 3600 50  0001 C CNN
+F 3 "" H 5050 3600 50  0001 C CNN
+	1    5050 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:CP1 C1
+U 1 1 60371FFE
+P 3700 4500
+F 0 "C1" H 3900 4550 50  0000 L CNN
+F 1 "0.22uF" H 3850 4450 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" H 3700 4500 50  0001 C CNN
+F 3 "~" H 3700 4500 50  0001 C CNN
+	1    3700 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 6037489C
+P 3700 4650
+F 0 "#PWR05" H 3700 4400 50  0001 C CNN
+F 1 "GND" H 3705 4477 50  0000 C CNN
+F 2 "" H 3700 4650 50  0001 C CNN
+F 3 "" H 3700 4650 50  0001 C CNN
+	1    3700 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 3850 3400 3850
+$Comp
+L Diode:1N4001 D2
+U 1 1 60376F19
+P 3400 3500
+F 0 "D2" V 3450 3750 50  0000 C CNN
+F 1 "1N4001" V 3350 3750 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3400 3325 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3400 3500 50  0001 C CNN
+	1    3400 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Diode:1N4001 D1
+U 1 1 6037786E
+P 4000 3500
+F 0 "D1" V 3950 3750 50  0000 C CNN
+F 1 "1N4001" V 4050 3750 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 4000 3325 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 4000 3500 50  0001 C CNN
+	1    4000 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4000 3850 4000 3650
+Wire Wire Line
+	4000 3850 3850 3850
+Wire Wire Line
+	6000 3750 6600 3750
+Wire Wire Line
+	6600 3750 6600 3150
+$Comp
+L Device:R R1
+U 1 1 6037E9BD
+P 3700 3000
+F 0 "R1" H 3550 2950 50  0000 C CNN
+F 1 "10k" H 3550 3050 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3630 3000 50  0001 C CNN
+F 3 "~" H 3700 3000 50  0001 C CNN
+	1    3700 3000
+	-1   0    0    1   
+$EndComp
+Connection ~ 3700 3150
+Wire Wire Line
+	3700 3150 3400 3150
+Wire Wire Line
+	5200 3600 5050 3600
+$Comp
+L Regulator_Linear:LM7809_TO220 U2
+U 1 1 60387139
+P 5550 2200
+F 0 "U2" H 5550 2442 50  0000 C CNN
+F 1 "LM7809" H 5550 2351 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5550 2425 50  0001 C CIN
+F 3 "https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF" H 5550 2150 50  0001 C CNN
+	1    5550 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C3
+U 1 1 6038868C
+P 5000 2400
+F 0 "C3" H 5200 2450 50  0000 L CNN
+F 1 "0.47uF" H 5150 2350 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" H 5000 2400 50  0001 C CNN
+F 3 "~" H 5000 2400 50  0001 C CNN
+	1    5000 2400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 2600 5550 2500
+Wire Wire Line
+	5000 2200 5000 1900
+Wire Wire Line
+	6100 2600 6100 2550
+Connection ~ 5550 2600
+$Comp
+L Device:C C4
+U 1 1 6038DA6A
+P 6100 2400
+F 0 "C4" H 6250 2450 50  0000 L CNN
+F 1 "100nF" H 6215 2355 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 6138 2250 50  0001 C CNN
+F 3 "~" H 6100 2400 50  0001 C CNN
+	1    6100 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 2250 6100 2200
+Wire Wire Line
+	5200 3900 4800 3900
+Wire Wire Line
+	4800 3900 4800 4850
+$Comp
+L Device:R R3
+U 1 1 60391C5A
+P 4800 5000
+F 0 "R3" H 4650 4950 50  0000 C CNN
+F 1 "150" H 4650 5050 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4730 5000 50  0001 C CNN
+F 3 "~" H 4800 5000 50  0001 C CNN
+	1    4800 5000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 6039AC06
+P 5400 5700
+F 0 "#PWR010" H 5400 5450 50  0001 C CNN
+F 1 "GND" H 5405 5527 50  0000 C CNN
+F 2 "" H 5400 5700 50  0001 C CNN
+F 3 "" H 5400 5700 50  0001 C CNN
+	1    5400 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 5450 4800 5450
+$Comp
+L Device:R R2
+U 1 1 603909A8
+P 4400 5450
+F 0 "R2" V 4193 5450 50  0000 C CNN
+F 1 "100k" V 4284 5450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4330 5450 50  0001 C CNN
+F 3 "~" H 4400 5450 50  0001 C CNN
+	1    4400 5450
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 60395AAE
+P 4250 5450
+F 0 "#PWR09" H 4250 5200 50  0001 C CNN
+F 1 "GND" H 4255 5277 50  0000 C CNN
+F 2 "" H 4250 5450 50  0001 C CNN
+F 3 "" H 4250 5450 50  0001 C CNN
+	1    4250 5450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3700 4000 3700 4150
+Wire Wire Line
+	6000 3900 6200 3900
+Wire Wire Line
+	6200 3900 6200 4300
+$Comp
+L power:GND #PWR0101
+U 1 1 603DF6E6
+P 5550 2600
+F 0 "#PWR0101" H 5550 2350 50  0001 C CNN
+F 1 "GND" H 5555 2427 50  0000 C CNN
+F 2 "" H 5550 2600 50  0001 C CNN
+F 3 "" H 5550 2600 50  0001 C CNN
+	1    5550 2600
+	1    0    0    -1  
+$EndComp
+Text Label 6500 2200 0    50   ~ 0
+9VDC
+Wire Wire Line
+	6000 3600 6050 3600
+Text Label 6050 3600 0    50   ~ 0
+9VDC
+Wire Wire Line
+	5200 4050 5150 4050
+Text Label 5150 4050 2    50   ~ 0
+9VDC
+$Comp
+L variable_duty_cycle_module:IRFZ44N Q1
+U 1 1 60398872
+P 5400 5450
+F 0 "Q1" H 5600 5500 50  0000 L CNN
+F 1 "IRFZ44N" H 5504 5405 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5700 5550 50  0001 C CNN
+F 3 "" H 5700 5550 50  0001 C CNN
+	1    5400 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 5150 4800 5450
+Connection ~ 4800 5450
+Wire Wire Line
+	4550 5450 4800 5450
+Wire Wire Line
+	5200 3750 4600 3750
+Wire Wire Line
+	4600 3750 4600 4150
+Wire Wire Line
+	4600 4150 3700 4150
+Connection ~ 3700 4150
+Wire Wire Line
+	3700 4150 3700 4300
+Wire Wire Line
+	3700 4300 6200 4300
+Connection ~ 3700 4300
+Wire Wire Line
+	3700 4300 3700 4350
+Wire Wire Line
+	3700 2850 3700 2800
+Text Label 3700 2800 2    50   ~ 0
+9VDC
+$Comp
+L power:VCC #PWR0103
+U 1 1 604414BD
+P 5000 1900
+F 0 "#PWR0103" H 5000 1750 50  0001 C CNN
+F 1 "VCC" H 5015 2073 50  0000 C CNN
+F 2 "" H 5000 1900 50  0001 C CNN
+F 3 "" H 5000 1900 50  0001 C CNN
+	1    5000 1900
+	1    0    0    -1  
+$EndComp
+Text Notes 3700 1850 2    50   ~ 0
+9VDC to 35VDC input.
+Text Notes 6050 5100 0    50   ~ 0
+Terminal 1 of J1 acts as a return path for the load, which creates a \n0VDC to 9VDC square wave across it.\nDuty cycle varies 5%-100% based on VR1 setting.
+Wire Wire Line
+	5000 2200 5250 2200
+Connection ~ 5000 2200
+Wire Wire Line
+	5000 2250 5000 2200
+Wire Wire Line
+	5000 2550 5000 2600
+Wire Wire Line
+	5000 2600 5550 2600
+Connection ~ 6100 2200
+Wire Wire Line
+	6100 2200 6500 2200
+Wire Wire Line
+	5850 2200 6100 2200
+Wire Wire Line
+	5550 2600 6100 2600
+$Comp
+L variable_duty_cycle_module:NE555P U1
+U 1 1 603969F6
+P 5600 3850
+F 0 "U1" H 5600 4415 50  0000 C CNN
+F 1 "NE555P" H 5600 4324 50  0000 C CNN
+F 2 "variable_duty_cycle_module:NE555P-DIP" H 5600 3850 50  0001 C CNN
+F 3 "" H 5600 3850 50  0001 C CNN
+	1    5600 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 3650 3400 3850
+Wire Wire Line
+	3400 3350 3400 3150
+Wire Wire Line
+	3700 3150 4000 3150
+Wire Wire Line
+	4000 3350 4000 3150
+Connection ~ 4000 3150
+Wire Wire Line
+	4000 3150 6600 3150
+$Comp
+L Device:R_POT VR1
+U 1 1 6037603E
+P 3700 3850
+F 0 "VR1" V 3550 3950 50  0000 R CNN
+F 1 "200k" V 3450 3950 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_Piher_T-16H_Single_Horizontal" H 3700 3850 50  0001 C CNN
+F 3 "~" H 3700 3850 50  0001 C CNN
+	1    3700 3850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 603F058A
+P 3150 2050
+F 0 "#PWR03" H 3150 1800 50  0001 C CNN
+F 1 "GND" V 3150 1850 50  0000 C CNN
+F 2 "" H 3150 2050 50  0001 C CNN
+F 3 "" H 3150 2050 50  0001 C CNN
+	1    3150 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR01
+U 1 1 603F58A5
+P 3150 1950
+F 0 "#PWR01" H 3150 1800 50  0001 C CNN
+F 1 "VCC" V 3150 2150 50  0000 C CNN
+F 2 "" H 3150 1950 50  0001 C CNN
+F 3 "" H 3150 1950 50  0001 C CNN
+	1    3150 1950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J2
+U 1 1 604079E4
+P 3350 1950
+F 0 "J2" H 3430 1942 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 3430 1851 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" H 3350 1950 50  0001 C CNN
+F 3 "~" H 3350 1950 50  0001 C CNN
+	1    3350 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 6040A448
+P 6300 5250
+F 0 "J1" H 6380 5242 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 6380 5151 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" H 6300 5250 50  0001 C CNN
+F 3 "~" H 6300 5250 50  0001 C CNN
+	1    6300 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 5700 5400 5650
+Wire Wire Line
+	5400 5250 6100 5250
+$EndSCHEMATC
