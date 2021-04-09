@@ -11,4 +11,4 @@ A module which applies a square wave across a given component, with the duty cyc
 - All CAD files available [here.](https://github.com/BenHenderson09/Variable-Duty-Cycle-Module/tree/master/kicad)
 
 ## Schematic
-![](https://github.com/BenHenderson09/Variable-Duty-Cycle-Module/blob/master/images/schematic.jpg)
+![](https://github.com/BenHenderson09/Variable-Duty-Cycle-Module/blob/master/images/schematic.png)
