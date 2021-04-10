@@ -12,3 +12,6 @@ A module which applies a square wave across a given component, with the duty cyc
 
 ## Schematic
 ![](https://github.com/BenHenderson09/Variable-Duty-Cycle-Module/blob/master/images/schematic.png)
+
+## Waveform example
+![](https://github.com/BenHenderson09/Variable-Duty-Cycle-Module/blob/master/images/waveform.jpg)
